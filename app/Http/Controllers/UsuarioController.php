@@ -89,7 +89,7 @@ class UsuarioController extends Controller
         $roles = Role::pluck('name', 'name')->all();
         $userRole = $user->roles->pluck('name', 'name')->all();
 
-        return redirect()->route('usuarios.editar', compact('user', 'roles', 'userRole'));
+        return view('usuarios.editar', compact('user', 'roles', 'userRole'));
     }
 
     /**

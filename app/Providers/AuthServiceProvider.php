@@ -25,6 +25,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        //SE DEFINE QUIEN VA SER EL USUARIO SUPER ADMINSITRADOR
+        Gate::before(function ($user,$ability){
+            return $user->email == 'admin@gmail.com' ?? null;
+        });
     }
 }
