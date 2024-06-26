@@ -45,8 +45,11 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'titulo' => 'required',
-            'contenido' => 'required',
+            'titulo'=>'required|string',
+            'area'=>'required|string',
+            'palabras_clave'=>'string',
+            'estado'=>'required|in:libre,asignado,terminado',
+            'descripcion'=>'string',
         ]);
 
         Blog::create($request->all());
@@ -86,8 +89,11 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         $this->validate($request, [
-            'titulo' => 'required',
-            'contenido' => 'required',
+            'titulo'=>'required|string',
+            'area'=>'required|string',
+            'palabras_clave'=>'string',
+            'estado'=>'required|in:libre,asignado,terminado',
+            'descripcion'=>'string',
         ]);
 
         $blog->update($request->all());

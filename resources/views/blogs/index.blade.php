@@ -3,7 +3,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h3 class="page__heading">Blogs</h3>
+            <h3 class="page__heading">Temas</h3>
         </div>
         <div class="section-body">
             <div class="row">
@@ -20,15 +20,20 @@
                                 <thead style="background-color:#6777ef">
                                     <th style="display: none;">ID</th>
                                     <th style="color:#fff;">Titulo</th>
-                                    <th style="color:#fff;">Contenido</th>
-                                    <th style="color:#fff;">Acciones</th>
+                                    <th style="color:#fff;">Area</th>
+                                    <th style="color:#fff;">Palabras_clave</th>
+                                    <th style="color:#fff;">estado</th>
+                                    <th style="color:#fff;">Descripcion</th>
                               </thead>
                               <tbody>
                             @foreach ($blogs as $blog)
                             <tr>
                                 <td style="display: none;">{{ $blog->id }}</td>
                                 <td>{{ $blog->titulo }}</td>
-                                <td>{{ $blog->contenido }}</td>
+                                <td>{{ $blog->area }}</td>
+                                <td>{{ $blog->palabras_clave }}</td>
+                                <td>{{ $blog->estado }}</td>
+                                <td>{{ $blog->descripcion }}</td>
                                 <td>
                                     <form action="{{ route('blogs.destroy',$blog->id) }}" method="POST">
                                         @can('editar-blog')

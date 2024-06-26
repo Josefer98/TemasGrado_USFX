@@ -33,14 +33,35 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                   <label for="area">Area</label>
+                                   <input type="text" name="area" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                   <label for="palabras_clave">palabras_clave</label>
+                                   <input type="text" name="palabras_clave" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <label>Estado</label>
+                                    <select class="form-control" name="estado">
+                                        <option value="libre" selected>Libre</option>
+                                        <option value="asignado">Asignado</option>
+                                        <option value="terminado">Terminado</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
 
                                 <div class="form-floating">
-                                <textarea class="form-control" name="contenido" style="height: 100px"></textarea>
-                                <label for="contenido">Contenido</label>
+                                <textarea class="form-control" name="descripcion" style="height: 100px"></textarea>
+                                <label for="descripcion">Descripcion</label>
                                 </div>
-
-                            <button type="submit" class="btn btn-primary">Guardar</button>
-                        </div>
+                           </div>
+                           <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
 
                         </div>

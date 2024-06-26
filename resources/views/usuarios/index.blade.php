@@ -11,8 +11,9 @@
                     <div class="card">
                         <div class="card-body">
                             <h3 class="text-center">Dashboard Content</h3>
-
-                            <a class="btn btn-warning" href="{{ route('usuarios.create') }}">Nuevo</a>
+                            @can('crear-usuario')
+                                <a class="btn btn-warning" href="{{ route('usuarios.create') }}">Nuevo</a>
+                            @endcan
 
                             <table class="table table-striped table-bordered table-hover mt-2">
                                 <thead style="background-color: #6777ef">

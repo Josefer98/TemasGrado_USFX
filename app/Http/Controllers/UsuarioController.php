@@ -16,6 +16,13 @@ use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:ver-usuario|crear-usuario|editar-usuario|borrar-usuario', ['only' => ['index']]);
+        $this->middleware('permission:crear-usuario', ['only' => ['create', 'storage']]);
+        $this->middleware('permission:editar-usuario', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:borrar-usuario', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *
